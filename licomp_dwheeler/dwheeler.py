@@ -13,7 +13,7 @@ from licomp.interface import UseCase
 from licomp.interface import CompatibilityStatus
 
 from licomp_dwheeler.config import licomp_dwheeler_version
-from licomp_dwheeler.config import cli_name
+from licomp_dwheeler.config import module_name
 from licomp_dwheeler.config import my_supported_api_version
 from licomp_dwheeler.config import disclaimer
 
@@ -27,13 +27,13 @@ class LicompDw(Licomp):
     def __init__(self):
         Licomp.__init__(self)
         self.provisionings = [Provisioning.BIN_DIST, Provisioning.SOURCE_DIST]
-        self.usecases = [UseCase.LIBRARY]
+        self.usecases = [UseCase.SNIPPET]
         with open(DW_LICENSES_FILE) as fp:
             self.data = json.load(fp)
             self.licenses = self.data['licenses']
         self.ret_string = {
             True: CompatibilityStatus.COMPATIBLE,
-            False: CompatibilityStatus.INCOMPATIBLE
+            False: CompatibilityStatus.INCOMPATIBLE,
         }
 
     def supported_licenses(self):
@@ -42,7 +42,9 @@ class LicompDw(Licomp):
     def supported_provisionings(self):
         return self.provisionings
 
-    def __outbound_inbound_path_sub(self, outbound, inbound, path=[]):
+    def __outbound_inbound_path_sub(self, outbound, inbound, path=None):
+        if path is None:
+            path = []
         if outbound == inbound:
             return True, path
         for allowed in self.licenses[inbound]['allowed']:
@@ -69,7 +71,7 @@ class LicompDw(Licomp):
                                            f'Path: {explanation}')
 
     def name(self):
-        return cli_name
+        return module_name
 
     def version(self):
         return licomp_dwheeler_version
