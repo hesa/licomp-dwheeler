@@ -2,7 +2,7 @@
 #
 # SPDX-License-Identifier: GPL-3.0-or-later
 
-licomp_dwheeler_version = '0.3.1'
+licomp_dwheeler_version = '0.3.2'
 my_supported_api_version = '0.3'
 
 repo = 'https://github.com/hesa/licomp-dwheeler/'
