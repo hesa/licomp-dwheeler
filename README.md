@@ -1,5 +1,6 @@
 # licomp-dwheeler
-Implementation of Licomp using David Wheeler's graph
+
+Implementation of Licomp using David Wheeler's [license compatibility graph](https://dwheeler.com/essays/floss-license-slide.html).
 
 * between a dwheeler outbound license and inbound Open Source licenses
 * when distributing a binary, linking to (e.g. linking to a library) Open Source components
