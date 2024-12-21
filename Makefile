@@ -34,6 +34,14 @@ install:
 reuse:
 	reuse lint
 
+licomp-dwheeler.dot:
+	devel/json2dot > $@
+
+licomp-dwheeler.png: licomp-dwheeler.dot
+	dot $< -Tpng -o licomp-dwheeler.png
+
+graph: licomp-dwheeler.png
+
 check: clean reuse lint test check_version build
 	@echo
 	@echo
