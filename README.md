@@ -10,7 +10,7 @@ Implementation of Licomp using David Wheeler's [license compatibility graph](htt
 ![David Wheeler's original graph](https://dwheeler.com/essays/floss-license-slide-image.png)
 
 ## Licomp's graph
-![Graph over the supported licenses' compatibilities](licomp-dwheeler.png){:height="343px" width="365px"}
+<img src="licomp-dwheeler.png" width="343" height="365">
 
 ## Introduction 
 
