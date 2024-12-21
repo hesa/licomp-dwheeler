@@ -10,6 +10,7 @@ clean:
 	rm -fr tests/__pycache__
 	rm -f *.csv
 	rm -fr dist
+	rm -f *.dot
 
 lint:
 	PYTHONPATH=. flake8 licomp_dwheeler
