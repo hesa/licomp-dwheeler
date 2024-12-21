@@ -6,9 +6,11 @@ Implementation of Licomp using David Wheeler's [license compatibility graph](htt
 * when distributing a binary, linking to (e.g. linking to a library) Open Source components
 * the Open Source components are unmodified
 
+![Graph over the supported licenses' compatibilities](licomp-dwheeler.png)
+
 ## Introduction 
 
-Licomp dwheeler is using the [Licomp](https://github.com/hesa/licomp) api to communicate with the Licomp resources. For a better understanding of Licomp we suggest you read:
+Licomp dwheeler implements the [Licomp](https://github.com/hesa/licomp) api for communicating with the Licomp resources. For a better understanding of Licomp we suggest you read:
 
 * [Licomp basic concepts](https://github.com/hesa/licomp/#licomp-concepts)
 * [Licomp reply format](https://github.com/hesa/licomp/blob/main/docs/reply-format.md)
