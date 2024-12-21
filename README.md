@@ -6,7 +6,11 @@ Implementation of Licomp using David Wheeler's [license compatibility graph](htt
 * when distributing a binary, linking to (e.g. linking to a library) Open Source components
 * the Open Source components are unmodified
 
-![Graph over the supported licenses' compatibilities](licomp-dwheeler.png)
+## David Wheeler's original graph
+![David Wheeler's original graph](https://dwheeler.com/essays/floss-license-slide-image.png)
+
+## Licomp's graph
+![Graph over the supported licenses' compatibilities](licomp-dwheeler.png){:height="343px" width="365px"}
 
 ## Introduction 
 
