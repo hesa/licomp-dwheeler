@@ -14,6 +14,8 @@ from licomp.interface import CompatibilityStatus
 
 from licomp_dwheeler.config import licomp_dwheeler_version
 from licomp_dwheeler.config import module_name
+from licomp_dwheeler.config import module_url
+from licomp_dwheeler.config import original_data_url
 from licomp_dwheeler.config import my_supported_api_version
 from licomp_dwheeler.config import disclaimer
 
@@ -72,6 +74,12 @@ class LicompDw(Licomp):
 
     def name(self):
         return module_name
+
+    def url(self):
+        return module_url
+
+    def data_url(self):
+        return original_data_url
 
     def version(self):
         return licomp_dwheeler_version
