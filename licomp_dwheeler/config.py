@@ -3,12 +3,14 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
 
 licomp_dwheeler_version = '0.3.3'
-my_supported_api_version = '0.3'
+my_supported_api_version = '0.4'
 
 repo = 'https://github.com/hesa/licomp-dwheeler/'
 disclaimer = 'This information is believed to be correct, but is not legal advice; for formal legal advice, please consult an attorney.'
 cli_name = 'licomp-dwheeler'
 module_name = 'licomp_dwheeler'
+module_url = 'https://github.com/hesa/licomp-dwheeler/'
+original_data_url = 'https://dwheeler.com/essays/floss-license-slide.html'
 
 description = """
 
@@ -39,5 +41,5 @@ COPYRIGHT
   License GPL-3.0-or-later
 
 ATTRIBUTION
-  licomp-dwheeler is using the license compatibility matrix from David Wheeler's license compatibility graph.
+  licomp-dwheeler is using the license compatibility matrix from David Wheeler's license compatibility graph (https://dwheeler.com/essays/floss-license-slide.html).
 """
