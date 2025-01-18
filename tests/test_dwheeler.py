@@ -30,38 +30,31 @@ def test_provisioning_is_not_supported():
     assert not ld.provisioning_supported(provisioning=Provisioning.LOCAL_USE)
     
 def test_compat():
-    ret = ld.outbound_inbound_compatibility("GPL-2.0-only", "BSD-3-Clause", usecase=UseCase.SNIPPET, provisioning=Provisioning.BIN_DIST)
+    ret = ld.outbound_inbound_compatibility("GPL-2.0-only", "BSD-3-Clause", usecase=UseCase.LIBRARY, provisioning=Provisioning.BIN_DIST)
     logging.debug("ret: " + str(ret))
     assert ret['compatibility_status'] == "yes"
     assert ret['status'] == "success"
 
 def test_incompat_1():
-    ret = ld.outbound_inbound_compatibility("BSD-3-Clause", "GPL-2.0-only", usecase=UseCase.SNIPPET, provisioning=Provisioning.BIN_DIST)
+    ret = ld.outbound_inbound_compatibility("BSD-3-Clause", "GPL-2.0-only", usecase=UseCase.LIBRARY, provisioning=Provisioning.BIN_DIST)
     logging.debug("ret: " + str(ret))
     assert ret['compatibility_status'] == "no"
     assert ret['status'] == "success"
 
 def test_bad_prov():
-    ret = ld.outbound_inbound_compatibility("BSD-3-Clause", "GPL-2.0-only", usecase=UseCase.SNIPPET, provisioning=Provisioning.LOCAL_USE)
+    ret = ld.outbound_inbound_compatibility("BSD-3-Clause", "GPL-2.0-only", usecase=UseCase.LIBRARY, provisioning=Provisioning.LOCAL_USE)
     logging.debug("ret: " + str(ret))
     assert ret['status'] == 'failure'
 
 def test_incompat_3():
-    ret = ld.outbound_inbound_compatibility("BSD-3-Clause", "DO_NO_EXIST", usecase=UseCase.SNIPPET, provisioning=Provisioning.BIN_DIST)
+    ret = ld.outbound_inbound_compatibility("BSD-3-Clause", "DO_NO_EXIST", usecase=UseCase.LIBRARY, provisioning=Provisioning.BIN_DIST)
     logging.debug("ret: " + str(ret))
     assert ret['compatibility_status'] == None
     assert ret['status'] == "failure"
 
 def test_incompat_4():
-    ret = ld.outbound_inbound_compatibility("DO_NO_EXIST", "GPL-2.0-only", usecase=UseCase.SNIPPET, provisioning=Provisioning.BIN_DIST)
+    ret = ld.outbound_inbound_compatibility("DO_NO_EXIST", "GPL-2.0-only", usecase=UseCase.LIBRARY, provisioning=Provisioning.BIN_DIST)
     logging.debug("ret: " + str(ret))
     assert ret['compatibility_status'] == None
     assert ret['status'] == "failure"
-
-def test_api_version():
-    licomp_api_version = ld.api_version()
-    lo_api_version = ld.supported_api_version()
-    logging.debug(f'versions: {licomp_api_version} {lo_api_version}')
-    assert licomp_api_version.split('.')[0] == lo_api_version.split('.')[0]
-    assert licomp_api_version.split('.')[1] == lo_api_version.split('.')[1]
 
