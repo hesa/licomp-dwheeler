@@ -29,7 +29,7 @@ class LicompDw(Licomp):
     def __init__(self):
         Licomp.__init__(self)
         self.provisionings = [Provisioning.BIN_DIST, Provisioning.SOURCE_DIST]
-        self.usecases = [UseCase.SNIPPET]
+        self.usecases = [UseCase.LIBRARY]
         with open(DW_LICENSES_FILE) as fp:
             self.data = json.load(fp)
             self.licenses = self.data['licenses']
